@@ -23,9 +23,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/cloudflare/cfssl/log"
 	"github.com/hyperledger/fabric/bccsp"
 	"github.com/hyperledger/fabric/bccsp/factory"
+	log "github.com/sirupsen/logrus"
 )
 
 func TestMain(m *testing.M) {

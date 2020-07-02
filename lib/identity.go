@@ -12,7 +12,6 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/cloudflare/cfssl/log"
 	"github.com/hyperledger/fabric-ca/api"
 	"github.com/hyperledger/fabric-ca/lib/client/credential"
 	"github.com/hyperledger/fabric-ca/lib/client/credential/idemix"
@@ -20,6 +19,7 @@ import (
 	"github.com/hyperledger/fabric-ca/lib/common"
 	"github.com/hyperledger/fabric-ca/util"
 	"github.com/pkg/errors"
+	log "github.com/sirupsen/logrus"
 )
 
 // Identity is fabric-ca's implementation of an identity

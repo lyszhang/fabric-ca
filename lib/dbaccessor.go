@@ -10,7 +10,6 @@ import (
 	"encoding/json"
 	"strings"
 
-	"github.com/cloudflare/cfssl/log"
 	"github.com/hyperledger/fabric-ca/api"
 	"github.com/hyperledger/fabric-ca/lib/attr"
 	"github.com/hyperledger/fabric-ca/lib/caerrors"
@@ -23,6 +22,7 @@ import (
 	"github.com/jmoiron/sqlx"
 	"github.com/kisielk/sqlstruct"
 	"github.com/pkg/errors"
+	log "github.com/sirupsen/logrus"
 	"golang.org/x/crypto/bcrypt"
 	"golang.org/x/crypto/ocsp"
 )

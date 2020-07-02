@@ -22,11 +22,11 @@ import (
 	"io/ioutil"
 	"time"
 
-	"github.com/cloudflare/cfssl/log"
 	"github.com/hyperledger/fabric-ca/util"
 	"github.com/hyperledger/fabric/bccsp"
 	"github.com/hyperledger/fabric/bccsp/factory"
 	"github.com/pkg/errors"
+	log "github.com/sirupsen/logrus"
 )
 
 // DefaultCipherSuites is a set of strong TLS cipher suites

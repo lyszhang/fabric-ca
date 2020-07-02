@@ -15,6 +15,12 @@
 			"revision": ""
 		},
 		{
+			"checksumSHA1": "JB+zCL27m3ZrDBlHVKjEmJrxTto=",
+			"path": "git.hrlyit.com/lls-blockchain/baas-sign-svc/pkg/common/logmgr",
+			"revision": "3e9bf4ef4e9f5dbc6b9cedb0b3274f3a7e10f46a",
+			"revisionTime": "2020-07-05T05:19:42Z"
+		},
+		{
 			"checksumSHA1": "3eH5XenKCK28s5fpbAeQoPGT3D0=",
 			"path": "github.com/GeertJohan/go.rice",
 			"revision": "9fdfd46f9806a9228aae341d65ab75c5235c383c",
@@ -653,6 +659,12 @@
 			"revisionTime": "2014-02-26T03:06:59Z"
 		},
 		{
+			"checksumSHA1": "D5jVUTl7HrJrdH95IxfLeSZifKQ=",
+			"path": "github.com/lestrrat/go-file-rotatelogs",
+			"revision": "d3151e2a480fdcd05fb97102f5310a47d96274c4",
+			"revisionTime": "2018-02-23T00:06:17Z"
+		},
+		{
 			"checksumSHA1": "88ochAZ1SsbAH6DgBQ5eTUChFE0=",
 			"path": "github.com/lib/pq",
 			"revision": "ae8357db35d721c58dcdc911318b55bef6b1b001",
@@ -811,6 +823,18 @@
 			"path": "github.com/prometheus/procfs/xfs",
 			"revision": "14fa7590c24d4615893b68e22fce3b3489689f65",
 			"revisionTime": "2019-01-02T13:50:31Z"
+		},
+		{
+			"checksumSHA1": "H/uL3j4L8U+//7NvzC+j5y8aaH4=",
+			"path": "github.com/rifflock/lfshook",
+			"revision": "b9218ef580f59a2e72dad1aa33d660150445d05a",
+			"revisionTime": "2018-09-20T16:41:30Z"
+		},
+		{
+			"checksumSHA1": "mB5o9lbse489BCvZGbRkarc2Xp0=",
+			"path": "github.com/sirupsen/logrus",
+			"revision": "9b3cdde74fbe9443d704467498a7dcb61a79de9b",
+			"revisionTime": "2019-04-03T09:10:19Z"
 		},
 		{
 			"checksumSHA1": "59wTbS4fE2282Q88NrBYImbFGbo=",

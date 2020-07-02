@@ -13,11 +13,11 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/cloudflare/cfssl/log"
 	"github.com/hyperledger/fabric-ca/lib"
 	"github.com/hyperledger/fabric-ca/lib/metadata"
 	"github.com/hyperledger/fabric-ca/util"
 	"github.com/pkg/profile"
+	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -172,7 +172,7 @@ func (c *ClientCmd) init() {
 		},
 	})
 	c.registerFlags()
-	log.Level = log.LevelInfo
+	log.SetLevel(log.InfoLevel)
 }
 
 // registerFlags registers command flags with viper

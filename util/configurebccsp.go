@@ -12,9 +12,9 @@ import (
 	"path"
 	"strings"
 
-	"github.com/cloudflare/cfssl/log"
 	"github.com/hyperledger/fabric/bccsp/factory"
 	"github.com/pkg/errors"
+	log "github.com/sirupsen/logrus"
 )
 
 // ConfigureBCCSP configures BCCSP, using

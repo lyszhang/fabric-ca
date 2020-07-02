@@ -7,10 +7,10 @@ SPDX-License-Identifier: Apache-2.0
 package lib
 
 import (
-	"github.com/cloudflare/cfssl/log"
 	"github.com/hyperledger/fabric-ca/lib/common"
 	"github.com/hyperledger/fabric-ca/lib/server/idemix"
 	"github.com/hyperledger/fabric-ca/lib/server/user"
+	log "github.com/sirupsen/logrus"
 )
 
 func newIdemixEnrollEndpoint(s *Server) *serverEndpoint {

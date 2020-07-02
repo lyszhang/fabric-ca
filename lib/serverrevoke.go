@@ -10,11 +10,11 @@ import (
 	"encoding/hex"
 	"strings"
 
-	"github.com/cloudflare/cfssl/log"
 	"github.com/hyperledger/fabric-ca/api"
 	"github.com/hyperledger/fabric-ca/lib/caerrors"
 	"github.com/hyperledger/fabric-ca/lib/server/db"
 	"github.com/hyperledger/fabric-ca/util"
+	log "github.com/sirupsen/logrus"
 )
 
 type revocationResponseNet struct {

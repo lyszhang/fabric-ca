@@ -26,7 +26,6 @@ import (
 	"github.com/cloudflare/cfssl/config"
 	cfcsr "github.com/cloudflare/cfssl/csr"
 	"github.com/cloudflare/cfssl/initca"
-	"github.com/cloudflare/cfssl/log"
 	"github.com/cloudflare/cfssl/signer"
 	cflocalsigner "github.com/cloudflare/cfssl/signer/local"
 	"github.com/hyperledger/fabric-ca/api"
@@ -51,6 +50,7 @@ import (
 	"github.com/hyperledger/fabric-ca/util"
 	"github.com/hyperledger/fabric/bccsp"
 	"github.com/pkg/errors"
+	log "github.com/sirupsen/logrus"
 )
 
 const (
@@ -481,7 +481,7 @@ func (ca *CA) initConfig() (err error) {
 	}
 	// Set log level if debug is true
 	if ca.server != nil && ca.server.Config != nil && ca.server.Config.Debug {
-		log.Level = log.LevelDebug
+		log.SetLevel(log.DebugLevel)
 	}
 	ca.normalizeStringSlices()
 

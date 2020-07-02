@@ -18,15 +18,17 @@ package util
 
 import (
 	"fmt"
+	"os"
+	"path"
 	"reflect"
 	"strconv"
 	"strings"
 	"time"
 
-	"github.com/cloudflare/cfssl/log"
+	"git.hrlyit.com/lls-blockchain/baas-sign-svc/pkg/common/logmgr"
 	"github.com/mitchellh/mapstructure"
-	logging "github.com/op/go-logging"
 	"github.com/pkg/errors"
+	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cast"
 	"github.com/spf13/pflag"
 	"github.com/spf13/viper"
@@ -184,14 +186,19 @@ func (fr *flagRegistrar) getHideBooleanTag(f *Field) bool {
 
 // CmdRunBegin is called at the beginning of each cobra run function
 func CmdRunBegin(v *viper.Viper) {
-	// If -d or --debug, set debug logging level
-	if v.GetBool("debug") {
-		log.Level = log.LevelDebug
-
-		logging.SetLevel(logging.INFO, "bccsp")
-		logging.SetLevel(logging.INFO, "bccsp_p11")
-		logging.SetLevel(logging.INFO, "bccsp_sw")
+	// log init
+	base := os.Getenv("CORE_CA_LOG")
+	if base == "" {
+		base = "/etc/hyperledger/fabric-ca/log"
 	}
+	podname := os.Getenv("HOSTNAME")
+	if podname == "" {
+		podname = "local"
+	}
+	baseLogFile := path.Join(base, podname)
+	appName := "fabric-ca"
+
+	logmgr.InitFabricLog(baseLogFile, appName)
 }
 
 // FlagString sets up a flag for a string, binding it to its name

@@ -16,7 +16,6 @@ import (
 	"testing"
 
 	"github.com/cloudflare/cfssl/csr"
-	"github.com/cloudflare/cfssl/log"
 	"github.com/cloudflare/cfssl/signer"
 	"github.com/hyperledger/fabric-ca/api"
 	cax509 "github.com/hyperledger/fabric-ca/lib/client/credential/x509"
@@ -26,6 +25,7 @@ import (
 	"github.com/hyperledger/fabric/bccsp/factory"
 	cspsigner "github.com/hyperledger/fabric/bccsp/signer"
 	"github.com/hyperledger/fabric/bccsp/utils"
+	log "github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/assert"
 )
 

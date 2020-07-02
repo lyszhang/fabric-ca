@@ -9,11 +9,11 @@ package idemix
 import (
 	"io/ioutil"
 
-	"github.com/cloudflare/cfssl/log"
 	proto "github.com/golang/protobuf/proto"
 	"github.com/hyperledger/fabric-ca/util"
 	"github.com/hyperledger/fabric/idemix"
 	"github.com/pkg/errors"
+	log "github.com/sirupsen/logrus"
 )
 
 const (

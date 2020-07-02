@@ -15,7 +15,6 @@ import (
 	"sync"
 	"time"
 
-	"github.com/cloudflare/cfssl/log"
 	proto "github.com/golang/protobuf/proto"
 	"github.com/hyperledger/fabric-amcl/amcl"
 	fp256bn "github.com/hyperledger/fabric-amcl/amcl/FP256BN"
@@ -28,6 +27,7 @@ import (
 	"github.com/hyperledger/fabric/bccsp"
 	"github.com/hyperledger/fabric/idemix"
 	"github.com/pkg/errors"
+	log "github.com/sirupsen/logrus"
 )
 
 // Issuer is the interface to the Issuer for external components

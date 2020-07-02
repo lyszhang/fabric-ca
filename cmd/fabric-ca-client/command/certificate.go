@@ -11,12 +11,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/cloudflare/cfssl/log"
 	"github.com/hyperledger/fabric-ca/api"
 	"github.com/hyperledger/fabric-ca/lib"
 	calog "github.com/hyperledger/fabric-ca/lib/common/log"
 	"github.com/hyperledger/fabric-ca/util"
 	"github.com/pkg/errors"
+	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )
 

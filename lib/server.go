@@ -23,7 +23,6 @@ import (
 	"sync"
 	"time"
 
-	"github.com/cloudflare/cfssl/log"
 	"github.com/cloudflare/cfssl/revoke"
 	"github.com/cloudflare/cfssl/signer"
 	"github.com/felixge/httpsnoop"
@@ -42,6 +41,7 @@ import (
 	"github.com/hyperledger/fabric-lib-go/healthz"
 	"github.com/hyperledger/fabric/common/metrics"
 	"github.com/pkg/errors"
+	log "github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 )
 

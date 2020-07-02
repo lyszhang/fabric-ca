@@ -11,7 +11,6 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/cloudflare/cfssl/log"
 	proto "github.com/golang/protobuf/proto"
 	fp256bn "github.com/hyperledger/fabric-amcl/amcl/FP256BN"
 	"github.com/hyperledger/fabric-ca/api"
@@ -19,6 +18,7 @@ import (
 	"github.com/hyperledger/fabric-ca/util"
 	"github.com/hyperledger/fabric/idemix"
 	"github.com/pkg/errors"
+	log "github.com/sirupsen/logrus"
 )
 
 // EnrollmentResponse is the idemix enrollment response from the server

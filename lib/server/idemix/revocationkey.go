@@ -12,9 +12,9 @@ import (
 	"encoding/pem"
 	"io/ioutil"
 
-	"github.com/cloudflare/cfssl/log"
 	"github.com/hyperledger/fabric-ca/util"
 	"github.com/pkg/errors"
+	log "github.com/sirupsen/logrus"
 )
 
 // RevocationKey represents issuer revocation public and private key

@@ -33,7 +33,7 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/cloudflare/cfssl/log"
+	log "github.com/sirupsen/logrus"
 )
 
 const (

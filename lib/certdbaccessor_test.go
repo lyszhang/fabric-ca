@@ -19,7 +19,6 @@ import (
 	"time"
 
 	"github.com/cloudflare/cfssl/certdb"
-	"github.com/cloudflare/cfssl/log"
 	"github.com/hyperledger/fabric-ca/lib/mocks"
 	"github.com/hyperledger/fabric-ca/lib/server/certificaterequest"
 	"github.com/hyperledger/fabric-ca/lib/server/db"
@@ -29,6 +28,7 @@ import (
 	"github.com/hyperledger/fabric/common/metrics/metricsfakes"
 	"github.com/jmoiron/sqlx"
 	"github.com/pkg/errors"
+	log "github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/assert"
 )
 

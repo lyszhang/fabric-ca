@@ -27,7 +27,6 @@ import (
 	"time"
 
 	"github.com/cloudflare/cfssl/csr"
-	"github.com/cloudflare/cfssl/log"
 	"github.com/hyperledger/fabric-ca/api"
 	"github.com/hyperledger/fabric-ca/lib"
 	"github.com/hyperledger/fabric-ca/lib/attr"
@@ -37,6 +36,7 @@ import (
 	"github.com/hyperledger/fabric-ca/lib/server/db/sqlite"
 	cadbuser "github.com/hyperledger/fabric-ca/lib/server/user"
 	"github.com/hyperledger/fabric-ca/util"
+	log "github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/assert"
 )
 

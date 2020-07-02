@@ -19,9 +19,9 @@ package tcert
 import (
 	"testing"
 
-	"github.com/cloudflare/cfssl/log"
 	"github.com/hyperledger/fabric-ca/api"
 	"github.com/hyperledger/fabric-ca/util"
+	log "github.com/sirupsen/logrus"
 )
 
 func TestTCertWithoutAttribute(t *testing.T) {

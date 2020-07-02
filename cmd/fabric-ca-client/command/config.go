@@ -16,13 +16,13 @@ import (
 	"strings"
 
 	"github.com/cloudflare/cfssl/csr"
-	"github.com/cloudflare/cfssl/log"
 	"github.com/hyperledger/fabric-ca/api"
 	"github.com/hyperledger/fabric-ca/lib"
 	"github.com/hyperledger/fabric-ca/lib/attr"
 	calog "github.com/hyperledger/fabric-ca/lib/common/log"
 	"github.com/hyperledger/fabric-ca/util"
 	"github.com/pkg/errors"
+	log "github.com/sirupsen/logrus"
 )
 
 const (

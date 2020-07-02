@@ -30,11 +30,11 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/cloudflare/cfssl/log"
 	"github.com/hyperledger/fabric-ca/api"
 	"github.com/hyperledger/fabric-ca/util"
 	"github.com/hyperledger/fabric/bccsp"
 	cspsigner "github.com/hyperledger/fabric/bccsp/signer"
+	log "github.com/sirupsen/logrus"
 )
 
 var (

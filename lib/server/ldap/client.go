@@ -15,7 +15,6 @@ import (
 	"strings"
 
 	"github.com/Knetic/govaluate"
-	"github.com/cloudflare/cfssl/log"
 	"github.com/hyperledger/fabric-ca/api"
 	causer "github.com/hyperledger/fabric-ca/lib/server/user"
 	"github.com/hyperledger/fabric-ca/lib/spi"
@@ -24,6 +23,7 @@ import (
 	"github.com/hyperledger/fabric/bccsp"
 	"github.com/jmoiron/sqlx"
 	"github.com/pkg/errors"
+	log "github.com/sirupsen/logrus"
 	ldap "gopkg.in/ldap.v2"
 )
 

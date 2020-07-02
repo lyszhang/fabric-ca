@@ -11,7 +11,6 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/cloudflare/cfssl/log"
 	"github.com/golang/protobuf/proto"
 	fp256bn "github.com/hyperledger/fabric-amcl/amcl/FP256BN"
 	"github.com/hyperledger/fabric-ca/api"
@@ -20,6 +19,7 @@ import (
 	"github.com/hyperledger/fabric/bccsp"
 	idemix "github.com/hyperledger/fabric/idemix"
 	"github.com/pkg/errors"
+	log "github.com/sirupsen/logrus"
 )
 
 const (

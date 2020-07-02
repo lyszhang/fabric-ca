@@ -14,7 +14,6 @@ import (
 
 	"github.com/cloudflare/cfssl/certdb"
 	certsql "github.com/cloudflare/cfssl/certdb/sql"
-	"github.com/cloudflare/cfssl/log"
 	cr "github.com/hyperledger/fabric-ca/lib/server/certificaterequest"
 	"github.com/hyperledger/fabric-ca/lib/server/db"
 	cadb "github.com/hyperledger/fabric-ca/lib/server/db"
@@ -23,6 +22,7 @@ import (
 	"github.com/jmoiron/sqlx"
 	"github.com/kisielk/sqlstruct"
 	"github.com/pkg/errors"
+	log "github.com/sirupsen/logrus"
 )
 
 const (

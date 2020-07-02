@@ -22,7 +22,6 @@ import (
 
 	cfsslapi "github.com/cloudflare/cfssl/api"
 	"github.com/cloudflare/cfssl/csr"
-	"github.com/cloudflare/cfssl/log"
 	proto "github.com/golang/protobuf/proto"
 	fp256bn "github.com/hyperledger/fabric-amcl/amcl/FP256BN"
 	"github.com/hyperledger/fabric-ca/api"
@@ -37,6 +36,7 @@ import (
 	"github.com/hyperledger/fabric/idemix"
 	"github.com/mitchellh/mapstructure"
 	"github.com/pkg/errors"
+	log "github.com/sirupsen/logrus"
 )
 
 // Client is the fabric-ca client object

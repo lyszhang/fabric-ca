@@ -14,7 +14,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/cloudflare/cfssl/log"
 	kitstatsd "github.com/go-kit/kit/metrics/statsd"
 	"github.com/gorilla/mux"
 	"github.com/hyperledger/fabric-lib-go/healthz"
@@ -23,6 +22,7 @@ import (
 	"github.com/hyperledger/fabric/common/metrics/prometheus"
 	"github.com/hyperledger/fabric/common/metrics/statsd"
 	prom "github.com/prometheus/client_golang/prometheus"
+	log "github.com/sirupsen/logrus"
 )
 
 // System is an operations server that is responsible for metrics and health checks
