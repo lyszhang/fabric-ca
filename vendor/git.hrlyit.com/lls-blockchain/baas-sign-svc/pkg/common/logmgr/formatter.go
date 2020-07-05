@@ -78,6 +78,7 @@ func defaultLogFormatter(app string, usage Usage, logType LogType) *jsonFormatte
 		FieldMap: FieldMap{
 			log.FieldKeyMsg:  "message",
 			log.FieldKeyTime: "timestamp",
+			log.FieldKeyFunc: "caller",
 		},
 		Fields: log.Fields{
 			FieldKeyUsage:     usage,
@@ -111,7 +112,8 @@ func fabricLogFormatter() *jsonFormatter {
 	return &jsonFormatter{
 		FieldMap: FieldMap{
 			log.FieldKeyMsg:  "message",
-			log.FieldKeyTime: "ts",
+			log.FieldKeyTime: "timestamp",
+			log.FieldKeyFunc: "caller",
 		},
 		Fields: log.Fields{
 			FieldKeyUsage: "runtime",
