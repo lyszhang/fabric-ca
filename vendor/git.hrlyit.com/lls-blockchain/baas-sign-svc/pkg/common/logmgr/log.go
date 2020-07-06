@@ -41,17 +41,14 @@ func newWriter(name, appname, suffix string) *rotatelogs.RotateLogs {
 	return writer
 }
 
-func NewWriter(name, appname, suffix string) *rotatelogs.RotateLogs {
-	return newWriter(name, appname, suffix)
-}
-
 func Init(base, appName string, usage Usage, logType LogType, chaincodeTrace bool) {
+	basePath := path.Join(base, GoNamespace(), appName, GoDeployment())
 	// Files
-	wrAll := newWriter(base, appName, "-stdout.log")
-	wrInfo := newWriter(base, appName, "-info.log")
-	wrWarn := newWriter(base, appName, "-warn.log")
-	wrError := newWriter(base, appName, "-error.log")
-	wrRuntime := newWriter(path.Join(base, "elk"), appName, "-runtime.log")
+	wrAll := newWriter(basePath, appName, "-stdout.log")
+	wrInfo := newWriter(basePath, appName, "-info.log")
+	wrWarn := newWriter(basePath, appName, "-warn.log")
+	wrError := newWriter(basePath, appName, "-error.log")
+	wrRuntime := newWriter(path.Join(basePath, "elk"), appName, "-runtime.log")
 
 	// formatter global
 	log.SetLevel(log.TraceLevel)
@@ -88,7 +85,7 @@ func Init(base, appName string, usage Usage, logType LogType, chaincodeTrace boo
 	log.AddHook(lfsRuntimeHook)
 
 	if chaincodeTrace {
-		wrCC := newWriter(path.Join(base, "elk"), appName, "-chaincode.log")
+		wrCC := newWriter(path.Join(basePath, "elk"), appName, "-chaincode.log")
 		lfsChaincodeHook := lfshook.NewHook(lfshook.WriterMap{
 			log.TraceLevel: wrCC,
 		}, chaincodeLogFormatter(appName, ChaincodeUsage, SvcType))
@@ -98,12 +95,13 @@ func Init(base, appName string, usage Usage, logType LogType, chaincodeTrace boo
 }
 
 func InitFabricLog(base, appName string) {
+	basePath := path.Join(base, GoNamespace(), appName, GoDeployment())
 	// Files
-	wrAll := newWriter(base, appName, "-stdout.log")
-	wrInfo := newWriter(base, appName, "-info.log")
-	wrWarn := newWriter(base, appName, "-warn.log")
-	wrError := newWriter(base, appName, "-error.log")
-	wrRuntime := newWriter(path.Join(base, "elk"), appName, "-runtime.log")
+	wrAll := newWriter(basePath, appName, "-stdout.log")
+	wrInfo := newWriter(basePath, appName, "-info.log")
+	wrWarn := newWriter(basePath, appName, "-warn.log")
+	wrError := newWriter(basePath, appName, "-error.log")
+	wrRuntime := newWriter(path.Join(basePath, "elk"), appName, "-runtime.log")
 
 	// formatter global
 	log.SetLevel(log.TraceLevel)

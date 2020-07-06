@@ -19,7 +19,6 @@ package util
 import (
 	"fmt"
 	"os"
-	"path"
 	"reflect"
 	"strconv"
 	"strings"
@@ -189,16 +188,11 @@ func CmdRunBegin(v *viper.Viper) {
 	// log init
 	base := os.Getenv("CORE_CA_LOG")
 	if base == "" {
-		base = "/etc/hyperledger/fabric-ca/log"
+		base = "/opt/baas-logs"
 	}
-	podname := os.Getenv("HOSTNAME")
-	if podname == "" {
-		podname = "local"
-	}
-	baseLogFile := path.Join(base, podname)
 	appName := "fabric-ca"
 
-	logmgr.InitFabricLog(baseLogFile, appName)
+	logmgr.InitFabricLog(base, appName)
 }
 
 // FlagString sets up a flag for a string, binding it to its name

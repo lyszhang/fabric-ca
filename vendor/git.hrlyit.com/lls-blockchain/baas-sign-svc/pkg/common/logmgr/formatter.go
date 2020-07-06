@@ -19,7 +19,8 @@ const (
 	FieldKeyUsage          = "usage"
 	FieldKeyType           = "type"
 	FieldKeyNamespace      = "namespace"
-	FieldKeyPodname        = "podname"
+	FieldKeyDeploymentname = "deployment_name"
+	FieldKeyPodname        = "pod_name"
 	FieldKeyApp            = "app"
 	FieldKeyThread         = "thread"
 	FieldKeyClass          = "class"
@@ -81,14 +82,15 @@ func defaultLogFormatter(app string, usage Usage, logType LogType) *jsonFormatte
 			log.FieldKeyFunc: "caller",
 		},
 		Fields: log.Fields{
-			FieldKeyUsage:     usage,
-			FieldKeyType:      logType,
-			FieldKeyNamespace: GoNamespace,
-			FieldKeyPodname:   GoPodname,
-			FieldKeyApp:       app,
-			FieldKeyThread:    GoID,
-			FieldKeyClass:     "",
-			FieldKeyStack:     "",
+			FieldKeyUsage:          usage,
+			FieldKeyType:           logType,
+			FieldKeyNamespace:      GoNamespace,
+			FieldKeyPodname:        GoPodname,
+			FieldKeyDeploymentname: GoDeployment,
+			FieldKeyApp:            app,
+			FieldKeyThread:         GoID,
+			FieldKeyClass:          "",
+			FieldKeyStack:          "",
 		},
 	}
 }
@@ -116,10 +118,14 @@ func fabricLogFormatter() *jsonFormatter {
 			log.FieldKeyFunc: "caller",
 		},
 		Fields: log.Fields{
-			FieldKeyUsage: "runtime",
-			FieldKeyType:  "fabric",
-			"name":        "fabric-ca",
-			"stacktrace":  "",
+			FieldKeyUsage:     "runtime",
+			FieldKeyType:      "fabric",
+			"name":            "fabric-ca-module",
+			"stacktrace":      "",
+			"deployment_name": GoDeployment(),
+			"pod_name":        GoPodname(),
+			"namespace":       GoNamespace(),
+			"app":             "fabric-ca",
 		},
 	}
 }
@@ -230,7 +236,7 @@ func (f *jsonFormatter) Format(entry *log.Entry) ([]byte, error) {
 				return nil, fmt.Errorf("FieldKeyThread func type mismatch")
 			}
 			data[key] = out()
-		case FieldKeyPodname, FieldKeyNamespace:
+		case FieldKeyDeploymentname, FieldKeyPodname, FieldKeyNamespace:
 			out, ok := value.(func() string)
 			if !ok {
 				return nil, fmt.Errorf("FieldKeyThread func type mismatch")

@@ -28,9 +28,13 @@ func GoPackage() string {
 }
 
 func GoPodname() string {
-	return os.Getenv("HOSTNAME")
+	return os.Getenv("POD_NAME")
 }
 
 func GoNamespace() string {
-	return "tmp"
+	return os.Getenv("NAMESPACE")
+}
+
+func GoDeployment() string {
+	return os.Getenv("DEPLOYMENT_NAME")
 }
