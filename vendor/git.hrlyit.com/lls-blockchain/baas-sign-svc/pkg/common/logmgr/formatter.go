@@ -122,9 +122,9 @@ func fabricLogFormatter() *jsonFormatter {
 			FieldKeyType:      "fabric",
 			"name":            "fabric-ca-module",
 			"stacktrace":      "",
-			"deployment_name": GoDeployment(),
-			"pod_name":        GoPodname(),
-			"namespace":       GoNamespace(),
+			"deployment_name": GoDeployment,
+			"pod_name":        GoPodname,
+			"namespace":       GoNamespace,
 			"app":             "fabric-ca",
 		},
 	}
@@ -239,7 +239,7 @@ func (f *jsonFormatter) Format(entry *log.Entry) ([]byte, error) {
 		case FieldKeyDeploymentname, FieldKeyPodname, FieldKeyNamespace:
 			out, ok := value.(func() string)
 			if !ok {
-				return nil, fmt.Errorf("FieldKeyThread func type mismatch")
+				return nil, fmt.Errorf("FieldKey func type mismatch")
 			}
 			data[key] = out()
 		default:

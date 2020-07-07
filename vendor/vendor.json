@@ -15,10 +15,10 @@
 			"revision": ""
 		},
 		{
-			"checksumSHA1": "aiD2OyX8E3SbMcjDhI2dFvyJfI8=",
+			"checksumSHA1": "k8S9RnCuDGV381bp7OQmk4quvCw=",
 			"path": "git.hrlyit.com/lls-blockchain/baas-sign-svc/pkg/common/logmgr",
-			"revision": "634b0ba2efcf4bbd35a879ef8caef569ea71d5e7",
-			"revisionTime": "2020-07-06T10:39:32Z"
+			"revision": "e17632ee0e0729576a0f8ba11235e8ec360a32a4",
+			"revisionTime": "2020-07-07T02:19:44Z"
 		},
 		{
 			"checksumSHA1": "3eH5XenKCK28s5fpbAeQoPGT3D0=",
