@@ -15,7 +15,7 @@ import (
 )
 
 const (
-	defaultTimestampFormat = "2006-01-02T15:04:05.000"
+	defaultTimestampFormat = "2006-01-02T15:04:05.000+08:00"
 	FieldKeyUsage          = "usage"
 	FieldKeyType           = "type"
 	FieldKeyNamespace      = "namespace"
@@ -205,7 +205,7 @@ func (f *jsonFormatter) Format(entry *log.Entry) ([]byte, error) {
 	}
 
 	if !f.DisableTimestamp {
-		data[f.FieldMap.resolve(log.FieldKeyTime)] = entry.Time.Format(timestampFormat)
+		data[f.FieldMap.resolve(log.FieldKeyTime)] = entry.Time.Local().Format(timestampFormat)
 	}
 
 	if !f.DisableMessageAndLevel {

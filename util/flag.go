@@ -24,7 +24,7 @@ import (
 	"strings"
 	"time"
 
-	"git.hrlyit.com/lls-blockchain/baas-sign-svc/pkg/common/logmgr"
+	"git.hrlyit.com/lls-blockchain/go-common/logmgr"
 	"github.com/mitchellh/mapstructure"
 	"github.com/pkg/errors"
 	log "github.com/sirupsen/logrus"

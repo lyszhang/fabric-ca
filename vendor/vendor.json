@@ -21,6 +21,12 @@
 			"revisionTime": "2020-07-07T02:19:44Z"
 		},
 		{
+			"checksumSHA1": "f3GfKLiLHIs58rBoSj1fbCfvWGc=",
+			"path": "git.hrlyit.com/lls-blockchain/go-common/logmgr",
+			"revision": "00fbe3575400ef99fd789a2e457fdf6df9ce32f0",
+			"revisionTime": "2020-07-17T03:09:29Z"
+		},
+		{
 			"checksumSHA1": "3eH5XenKCK28s5fpbAeQoPGT3D0=",
 			"path": "github.com/GeertJohan/go.rice",
 			"revision": "9fdfd46f9806a9228aae341d65ab75c5235c383c",
