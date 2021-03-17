@@ -108,6 +108,9 @@ func (ac *CredentialAccessor) InsertCredential(cr CredRecord) error {
 		return err
 	}
 	cr.Level = ac.level
+	if cr.RevokedAt.IsZero() {
+		cr.RevokedAt = time.Unix(28801,0).UTC()
+	}
 	res, err := ac.db.NamedExec("InsertCredential", InsertCredentialSQL, cr)
 	if err != nil {
 		return errors.Wrap(err, "Failed to insert credential into datastore")

@@ -98,6 +98,9 @@ func (d *Accessor) InsertCertificate(cr certdb.CertificateRecord) error {
 	if err != nil {
 		return err
 	}
+	if cr.RevokedAt.IsZero() {
+		cr.RevokedAt = time.Unix(28801,0).UTC()
+	}
 
 	res, err := d.db.NamedExec(insertSQL, &certdb.CertificateRecord{
 		Serial:    cr.Serial,
