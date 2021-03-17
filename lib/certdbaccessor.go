@@ -98,6 +98,9 @@ func (d *CertDBAccessor) InsertCertificate(cr certdb.CertificateRecord) error {
 
 	log.Debugf("Saved serial number as hex %s", serial)
 
+	if cr.RevokedAt.IsZero() {
+		cr.RevokedAt = time.Unix(28801,0).UTC()
+	}
 	record := &db.CertRecord{
 		ID:    id,
 		Level: d.level,
