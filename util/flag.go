@@ -193,6 +193,10 @@ func CmdRunBegin(v *viper.Viper) {
 	appName := "fabric-ca"
 
 	logmgr.InitFabricLog(base, appName)
+	loglvl := os.Getenv("FABRIC_CA_SERVER_LOGLEVEL")
+	if loglvl == "info" {
+		log.SetLevel(log.InfoLevel)
+	}
 }
 
 // FlagString sets up a flag for a string, binding it to its name
